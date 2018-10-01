@@ -1,3 +1,5 @@
+process.env.UV_THREADPOOL_SIZE = 5;
+
 const https = require("https");
 const crypto = require("crypto");
 const fs = require("fs");
