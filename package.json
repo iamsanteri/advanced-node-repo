@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/iamsanteri/advanced-node-repo#readme",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "webworker-threads": "^0.7.17"
   }
 }
