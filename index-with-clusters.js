@@ -1,3 +1,12 @@
+process.env.UV_THREADPOOL_SIZE = 1;
+const cluster = require("cluster");
+
+// Is the file being executed in master mode? 
+if (cluster.isMaster) {
+    // Cause index.js to be executed again but in child mode
+    cluster.fork();
+    cluster.fork();
+} else {
     // I'm a child, I'm going to act like a server and do nothing else
     const express = require("express");
     const crypto = require("crypto");
@@ -14,4 +23,5 @@
     });
 
     console.log("Server started...");
-    app.listen(3000);
+    app.listen(3000); 
+}
